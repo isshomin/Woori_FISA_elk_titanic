@@ -1,18 +1,18 @@
 # ⛴Titanic Data Kibana Viusalize🖼 미니 프로젝트
 ---
-
+<h2 style="font-size: 25px;"> 개발팀원👨‍👨‍👧‍👦💻<br>
+<br>
 
 |<img src="https://avatars.githubusercontent.com/u/175369539?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/79312705?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/98442485?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/175371231?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |[@김성호](https://github.com/castlhoo)|[@김상민](https://github.com/isshomin)|[@이연희](https://github.com/LeeYeonhee-00)|[@오재웅](https://github.com/ohwoong2)|
 ---
-
+<br>
 
 
 <details>
 <summary> <h2 style="font-size: 30px;">ELK 파이프 라인🗄️과 MySQL🐬 연동</summary>
 <br>
-<h2 style="font-size: 25px;"> 개발팀원👨‍👨‍👧‍👦💻<br>
 
 
 ## 설치 🖥️
@@ -58,8 +58,8 @@
     - logstash 경로에 .conf파일 생성 후 수정
         
         ```
-        touch logstash.conf
-        vi logstash.conf
+        touch titanic.conf
+        vi titanic.conf
         ```
         ```
         input {
@@ -96,7 +96,7 @@
         }
         ```
         
-<p align="left"><img src="https://github.com/user-attachments/assets/b947109f-f821-4667-9fdd-b5b4fc860051"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/cca96ee4-c9b8-44ac-87f5-5985ef0556ee"></p><br>
         
     - kibana/config/kibana.yml  [server.host](http://server.host): 0.0.0.0 추가
         
@@ -118,7 +118,12 @@
         sudo mysql -u root -p
         root
         ```
-        
+- virtualBox port-forwarding 추가
+
+  <br>
+    
+<p align="left"><img src="https://github.com/user-attachments/assets/1cf46606-115d-41f9-9d31-c84d4a86ebfb"></p><br>
+
     
 
 ## 실행 🔎
