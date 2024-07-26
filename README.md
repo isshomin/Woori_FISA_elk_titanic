@@ -65,7 +65,7 @@
         input {
           jdbc {
             jdbc_driver_library => "/home/username/ELK/logstash-7.11.1/tools/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar"
-            //mysql-connector 경로값 지정필수
+            # mysql-connector 경로값 지정필수
             jdbc_driver_class => "com.mysql.cj.jdbc.Driver"
             jdbc_connection_string => "jdbc:mysql://localhost:3306/fisa"
             jdbc_user => "root"
@@ -73,30 +73,49 @@
             schedule => "* * * * *" # 매 분마다 실행
             statement => "SELECT * FROM titanic_raw"
           }
+        }
         filter {
           if [cabin] {
-                    grok {
-                      match => { "cabin" => "(?<first_cabin>^[^\s]+)" }
-                    }
-                    grok {
-                      match => { "first_cabin" => "^[A-Za-z]*(?<cabin_number>\d+)" }
-                                  remove_field => ["first_cabin"]
-                    }
-                    mutate {
-                          convert => { "cabin_number" => "integer" }
-                    }
+            grok {
+              match => { "cabin" => "(?<first_cabin>^[^\s]+)" }
+            }
+            grok {
+              match => { "first_cabin" => "^[A-Za-z]*(?<cabin_number>\d+)" }
+              remove_field => ["first_cabin"]
+            }
+            mutate {
+              convert => { "cabin_number" => "integer" }
+            }
           }
+          mutate {
+            add_field => {
+              "group" => ""
+            }
+          }
+        
+          ruby {
+            code => "
+              if event.get('gender') == 'female' or (event.get('age') and event.get('age').to_f <= 18)
+                event.set('group', 'Women and Children')
+              elsif event.get('gender') == 'male' and event.get('age') and event.get('age').to_f > 18
+                event.set('group', 'Men')
+              else
+                event.cancle
+              end
+            "
+          }
+        
         }
         output {
           elasticsearch {
             hosts => ["http://localhost:9200"]
             index => "titanic"
-        #    document_id => "%{id}" # primary key로 사용할 필드
+            document_id => "%{passengerid}" # primary key로 사용할 필드
           }
         }
-        ```
+    ```
         
-<p align="left"><img src="https://github.com/user-attachments/assets/cca96ee4-c9b8-44ac-87f5-5985ef0556ee"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/074bb43e-41f0-4370-aecc-0ef65d42e14d"></p><br>
         
     - kibana/config/kibana.yml  [server.host](http://server.host): 0.0.0.0 추가
         
@@ -172,6 +191,7 @@
 
 ## 학습 목적
 
+ - MySQL + ELK Pipeline 환경 구축 역량 강화
  - Kibana visualize 역량 강화
 
 ## 가 설
@@ -184,7 +204,7 @@
 
 (출처 : [https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions](https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions))
 
-많은 사람들에 따르면, 타이타닉호가 빙하의 앞머리에 부딫혔기에 더 큰 비극과 선두에 있었던 승객의 사망률이 높았다고 한다. 과연 루머가 사실일지, 거짓일까? Cabin에는 각각의 객실번호가 있는데, 타이타닉호의 설계도에 따르면 선두에서 후미로 갈수록 객실번호가 커진다고 한다. 
+많은 사람들에 따르면, 타이타닉호가 빙하의 앞머리에 부딪혔기에 더 큰 비극과 선두에 있었던 승객의 사망률이 높았다고 한다. 과연 루머가 사실일지, 거짓일까? Cabin에는 각각의 객실번호가 있는데, 타이타닉호의 설계도에 따르면 선두에서 후미로 갈수록 객실번호가 커진다고 한다. 
 
 <p align="left"><img src="https://github.com/user-attachments/assets/468acf75-91ca-4677-8222-d1ed9be290b6"></p><br>
 
