@@ -1,4 +1,13 @@
 # ELK 파이프 라인🗄️과 MySQL🐬 연동
+---
+### 개발팀원👨‍👨‍👧‍👦💻
+
+|<img src="https://avatars.githubusercontent.com/u/175369539?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/79312705?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/98442485?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/175371231?v=4" width="150" height="150"/>|
+|:-:|:-:|:-:|:-:|
+|[@김성호](https://github.com/castlhoo)|[@김상민](https://github.com/isshomin)|[@이연희](https://github.com/LeeYeonhee-00)|[@오재웅](https://github.com/ohwoong2)|
+---
+
+
 
 ## 설치 🖥️
 
