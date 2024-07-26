@@ -180,13 +180,13 @@
 
 **: “빙하발견, 우현 앞으로!” 라는 선장의 명령이 타이타닉의 비극을 불러왔다는 루머**
 
-<p align="left"><img src="https://github.com/user-attachments/assets/b2576dc5-6ab9-4e47-a349-f18e2d4e3ca0"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/0b69dcb1-7c84-4d10-86e6-aaea66e89366"></p><br>
 
 (출처 : [https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions](https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions))
 
 많은 사람들에 따르면, 타이타닉호가 빙하의 앞머리에 부딫혔기에 더 큰 비극과 선두에 있었던 승객의 사망률이 높았다고 한다. 과연 루머가 사실일지, 거짓일까? Cabin에는 각각의 객실번호가 있는데, 타이타닉호의 설계도에 따르면 선두에서 후미로 갈수록 객실번호가 커진다고 한다. 
 
-<p align="left"><img src="https://github.com/user-attachments/assets/a55af1b0-74b5-4ee1-8e18-a4031389670a"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/468acf75-91ca-4677-8222-d1ed9be290b6"></p><br>
 
 객실 위치에 따른 사망률 분석하여 루머에 대한 진실 혹은 거짓을 파헤쳐 본다.
 
@@ -196,7 +196,7 @@
 
 **: 여성과 아이들이 먼저! 남성보다 여성과 아이들의 구출을 우선했다는 루머**
 
-<p align="left"><img src="https://github.com/user-attachments/assets/c62a8632-01ba-4d6c-b90b-4a76960d4fe7"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/739b7ca0-2e1c-402b-90fc-d19ae949f6ec"></p><br>
 
 (출처 : [https://nypost.com/2022/01/27/8-titanic-myths-busted/](https://nypost.com/2022/01/27/8-titanic-myths-busted/))
 
@@ -208,7 +208,7 @@
 
 ### 3. Bigger proportion of third-class survived than in second
 
-<p align="left"><img src="https://github.com/user-attachments/assets/14466b21-b46e-49ca-b453-e1c1bd0a8900"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/b630d358-8248-4980-a4ea-16ad1ff6333f"></p><br>
 
 (출처 : [https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions](https://www.stevenveerapen.com/top-10-titanic-myths-mysteries-and-misconceptions)
 
@@ -220,7 +220,7 @@
 
 ### 4. 'Be British, boys, be British’
 
-<p align="left"><img src="https://github.com/user-attachments/assets/8afe8e55-5a73-4451-8f41-a1f8e55f99bf"></p><br>
+<p align="left"><img src="https://github.com/user-attachments/assets/207fb1c9-9c81-42ac-ae0a-cbd8465d150f"></p><br>
 
 (출처 : [https://www.dw.com/en/10-things-about-the-titanic-you-probably-didnt-know/a-61368562](https://www.dw.com/en/10-things-about-the-titanic-you-probably-didnt-know/a-61368562))
 
