@@ -199,7 +199,7 @@
 
 ### 1️⃣ 가설1을 검증을 위해 cabin field에서 알파벳을 제거 후 int 타입으로 변환 시켜줍니다.
 <br>
-: cabin field의 객실번호만을 추출하기 위한 작업입니다.
+: cabin field의 객실번호만을 추출하기 위한 작업입니다.    
 
 - grok필터로 정규 표현식을 사용하여 cabin field의 값을 분석합니다. 이 필터는 cabin field에서 첫 번째 공백 전까지의 텍스트를 first_cabin 필드로 추출합니다.
     ```bash
@@ -225,7 +225,7 @@
 
 ### 2️⃣ 가설2를 검증을 위해 gender field와 age field를 활용하여 group field를 생성합니다.
 <br>
-: 여성과 아이들 / 성인 남성을 grouping하기 위한 작업입니다.
+: 여성과 아이들 / 성인 남성을 grouping하기 위한 작업입니다.    
 
 - add_field 옵션을 사용하여 이벤트에 새로운 필드 group을 추가합니다.
     ```bash
@@ -301,13 +301,15 @@
 <br>
 <p align="left"><img src="https://github.com/user-attachments/assets/7d29e342-715d-425e-a712-90f857754052"></p><br>
 
-### 키바나데이터분석~~~
+### cabin field에서 객실 번호 데이터만 추출하도록 전처리한 cabin_number field를 전체 객실의 3분의 1씩 구간을 나누어 1~50번 객실은 선두에 위치한 front, 51~100번 객실은 중간인 middle, 101~148번 객실은 후반인 back으로 분류하여 생존률을 시각화 하였다. 
+### Kibana로 시각화한 그래프를 보면 middle의 생존률이 가장 낮은 것을 볼 수 있다. 
+### 따라서, 선두에 위치한 승객들이 더 사망률이 높다는 루머는 유효하지 않을 것을 알 수 있다.
 
 ---
 
 ## 결 론 📢
 
-### 이 루머는 진실입니다 거짓입니다
+### 이 루머는 거짓!
 
 ---
 
