@@ -419,7 +419,7 @@ Embarked(승선장소)는 아일랜드, 프랑스, 영국으로 나뉘어져있�
 <br>
 
 ### [이연희](https://github.com/LeeYeonhee-00)
-> 2
+> logstash config파일에서 filter를 사용하여 데이터 전처리 하는 법을 연습할 수 있어서 좋았다. 또한, mysql + ELK pipeline 환경 구축을 하며 연결되어 값이 들어오는 것을 확인하고 kibana로 시각화해보는 과정이 재미있었다. 
 
 <br>
 
