@@ -199,7 +199,9 @@
 
 ### 1️⃣ 가설1을 검증을 위해 cabin field에서 알파벳을 제거 후 int 타입으로 변환 시켜줍니다.
 <br>
-: cabin field의 객실번호만을 추출하기 위한 작업입니다.    
+: cabin field의 객실번호만을 추출하기 위한 작업입니다. 
+
+<br><br>
 
 - grok필터로 정규 표현식을 사용하여 cabin field의 값을 분석합니다. 이 필터는 cabin field에서 첫 번째 공백 전까지의 텍스트를 first_cabin 필드로 추출합니다.
     ```bash
@@ -225,7 +227,9 @@
 
 ### 2️⃣ 가설2를 검증을 위해 gender field와 age field를 활용하여 group field를 생성합니다.
 <br>
-: 여성과 아이들 / 성인 남성을 grouping하기 위한 작업입니다.    
+: 여성과 아이들 / 성인 남성을 grouping하기 위한 작업입니다.  
+
+<br><br>
 
 - add_field 옵션을 사용하여 이벤트에 새로운 필드 group을 추가합니다.
     ```bash
