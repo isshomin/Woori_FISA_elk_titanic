@@ -199,6 +199,7 @@
 
 ### 1️⃣ 가설1을 검증을 위해 cabin field에서 알파벳을 제거 후 int 타입으로 변환 시켜줍니다.
 <br>
+: cabin field의 객실번호만을 추출하기 위한 작업입니다.
 
 - grok필터로 정규 표현식을 사용하여 cabin field의 값을 분석합니다. 이 필터는 cabin field에서 첫 번째 공백 전까지의 텍스트를 first_cabin 필드로 추출합니다.
     ```bash
@@ -207,14 +208,14 @@
     }
     ```
 - 두 번째 grok 필터는 first_cabin field에서 알파벳 문자로 시작하는 부분을 제거하고, 숫자만 추출하여 cabin_number field에 저장합니다.
-    remove_field 옵션을 사용하여 first_cabin field를 제거합니다.
+    remove_field 옵션을 사용하여 중간 과정인 first_cabin field를 제거합니다.
     ```bash
     grok {
       match => { "first_cabin" => "^[A-Za-z]*(?<cabin_number>\d+)" }
       remove_field => ["first_cabin"]
     }
     ```
-- mutate 필터는 cabin_number field를 int 타입으로 변환합니다.
+- mutate 필터는 String 타입인 cabin_number field를 int 타입으로 변환합니다.
     ```bash
     mutate {
       convert => { "cabin_number" => "integer" }
@@ -222,8 +223,9 @@
     ```
 <br><br>
 
-### 2️⃣ 가설2를 검증을 위해 gender field와 age field를 활용하여 여성과 아이들의 data field를 생성합니다.
+### 2️⃣ 가설2를 검증을 위해 gender field와 age field를 활용하여 group field를 생성합니다.
 <br>
+: 여성과 아이들 / 성인 남성을 grouping하기 위한 작업입니다.
 
 - add_field 옵션을 사용하여 이벤트에 새로운 필드 group을 추가합니다.
     ```bash
@@ -238,7 +240,7 @@
       if event.get('gender') == 'female' or (event.get('age') and event.get('age').to_f <= 18)
         event.set('group', 'Women and Children')
     ```
-- 위의 조건이 만족되지 않으면, gender가 "male"이고 age가 18보다 크면 group 필드를 'Men'으로 설정합니다. 이 조건은 성별이 남성이며, 나이가 18세를 초과하는 경우에 해당합니다.
+- 위의 조건이 만족되지 않으면, gender가 "male"이고 age가 18보다 크면 group 필드를 'Men'으로 설정합니다. 이 조건은 성별이 남성이며, 나이가 18세를 초과(성인)하는 경우에 해당합니다.
     ```bash
     elsif event.get('gender') == 'male' and event.get('age') and event.get('age').to_f > 18
     event.set('group', 'Men')
