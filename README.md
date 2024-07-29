@@ -246,7 +246,7 @@
     ```
 - 위의 조건이 만족되지 않으면, gender가 "male"이고 age가 18보다 크면 group 필드를 'Men'으로 설정합니다. 이 조건은 성별이 남성이며, 나이가 18세를 초과(성인)하는 경우에 해당합니다.
     ```bash
-    elsif event.get('gender') == 'male' and event.get('age') and event.get('age').to_f > 18
+    elseif event.get('gender') == 'male' and event.get('age') and event.get('age').to_f > 18
     event.set('group', 'Men')
     ```
 - 두 조건에 모두 해당하지 않는 경우, event.cancel을 호출하여 현재 이벤트를 취소합니다.
